@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Petty Cash Expenses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invoice number</th>
+      <th>Total amount</th>
+      <th>Expense date</th>
+      <th>Description</th>
+      <th>Paid to</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @petty_cash_expenses.each do |petty_cash_expense| %>
+      <tr>
+        <td><%= petty_cash_expense.invoice_number %></td>
+        <td><%= petty_cash_expense.total_amount %></td>
+        <td><%= petty_cash_expense.expense_date %></td>
+        <td><%= petty_cash_expense.description %></td>
+        <td><%= petty_cash_expense.paid_to %></td>
+        <td><%= link_to 'Show', petty_cash_expense %></td>
+        <td><%= link_to 'Edit', edit_petty_cash_expense_path(petty_cash_expense) %></td>
+        <td><%= link_to 'Destroy', petty_cash_expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Petty Cash Expense', new_petty_cash_expense_path %>

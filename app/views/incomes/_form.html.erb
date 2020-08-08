@@ -1,0 +1,47 @@
+<%= form_with(model: income, local: true) do |form| %>
+  <% if income.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+      <ul>
+        <% income.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :invoice_number %>
+    <%= form.number_field :invoice_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ruc_number %>
+    <%= form.number_field :ruc_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_amount %>
+    <%= form.text_field :total_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paid_date %>
+    <%= form.date_select :paid_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

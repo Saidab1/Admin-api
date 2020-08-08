@@ -1,0 +1,42 @@
+<%= form_with(model: petty_cash_expense, local: true) do |form| %>
+  <% if petty_cash_expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(petty_cash_expense.errors.count, "error") %> prohibited this petty_cash_expense from being saved:</h2>
+
+      <ul>
+        <% petty_cash_expense.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :invoice_number %>
+    <%= form.number_field :invoice_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_amount %>
+    <%= form.text_field :total_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expense_date %>
+    <%= form.date_select :expense_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paid_to %>
+    <%= form.text_field :paid_to %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

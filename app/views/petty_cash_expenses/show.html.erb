@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Invoice number:</strong>
+  <%= @petty_cash_expense.invoice_number %>
+</p>
+
+<p>
+  <strong>Total amount:</strong>
+  <%= @petty_cash_expense.total_amount %>
+</p>
+
+<p>
+  <strong>Expense date:</strong>
+  <%= @petty_cash_expense.expense_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @petty_cash_expense.description %>
+</p>
+
+<p>
+  <strong>Paid to:</strong>
+  <%= @petty_cash_expense.paid_to %>
+</p>
+
+<%= link_to 'Edit', edit_petty_cash_expense_path(@petty_cash_expense) %> |
+<%= link_to 'Back', petty_cash_expenses_path %>
